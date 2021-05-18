@@ -1,6 +1,6 @@
 # Python Cheatsheet
-Cheatsheets are good when you want to revise some of the concepts, <br/>
-I would recommend you to learn in depth from this course: [Udemy Course]([https://link](https://www.udemy.com/course/complete-python-bootcamp/))
+Cheatsheets are good when you want to revise some of the concepts, but a idle way to start learning <br/>
+I would recommend you to learn in depth from this course: [Udemy Course](https://www.udemy.com/course/complete-python-bootcamp/)
 <br/>If you can self learn Repository: [Github](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
 
 ----------
@@ -239,7 +239,7 @@ a.index(3) # This can be use with list as well.
 ```
 ----------
 
-# Sets in Python
+## Sets in Python
 Sets are an unordered collection of unique elements. 
 ```python
 a = set()
@@ -248,7 +248,7 @@ a.add(1)
 a.add(1)
 print(a) # {1}
 ```
-# Convert list to set
+### Convert list to set
 ```python
 a = [1,1,2,2,2,3,3,3]
 a = set(a)
@@ -256,33 +256,33 @@ a = set(a)
 ----------
 
 ## File IO with Python
-## init file obj
+### init file obj
 ```python
 file = open("file.txt")
 ```
-## read contents
+### read contents
 ```python
 contents = file.read()
 print(contents)
 ```
-## move the cursor/pointer
+### move the cursor/pointer
 ```python
 file.seek(0)
 ```
-## read line by line
+### read line by line
 ```python
 contents = file.readlines() # returns list of lines.
 ```
-## close the file
+### close the file
 ```python
 file.close()
 ```
-## Using context manager
+### Using context manager
 ```python
 with open("file.txt") as file:
     print(file.read())
 ```
-## different modes for file
+### different modes for file
 - `r`: Read
 - `r+`: Read and Write
 - `w`: Write (will override the file)
@@ -303,4 +303,114 @@ if "hello" is "world" or "india" is "country":
     print("Yeah!!")
 if not 10 == 10:
     print("Tough luck!" )
+```
+
+----------
+
+## Python Statements:
+Indentation is **important** in the python.
+### if, elif, else
+```python
+loc = 'Bank'
+
+if loc == 'Auto Shop':
+    print('Welcome to the Auto Shop!')
+elif loc == 'Bank':
+    print('Welcome to the bank!')
+else:
+    print('Where are you?')
+```
+### for loops
+```python
+# iterate list/string/tuple
+l = [1,2,3]
+for item in l:
+    print(item)
+# extraction made easy
+list2 = [(2,4),(6,8),(10,12)]
+for t1,t2 in list2: # Same as dict. t1 will be key, t2 will be value.
+    print(t1) # will print 2,6,10
+# Protip about dict: use .value() and .keys() for looping Values/keys.
+```
+### white loops
+in python we can use python with else statement.
+```python
+x = 1
+while x < 3:
+    print(f"x is {x}")
+    x = x + 1
+else:
+    print("Uhhoo! x > 3")
+```
+### Statement in python
+- **break**: Breaks out of the current closest enclosing loop.
+- **continue**: Goes to the top of the closest enclosing loop.
+- **pass**: Does nothing at all, Programmers use this for placeholder.
+```python
+def future_method():
+    # Todo: implement it later.
+    pass
+while True:
+    break
+for i in range(10):
+    if i == 5:
+        #omit
+        continue 
+    print(i)
+```
+## Some useful operators 
+### range()
+range is a generator.
+<br/> **Syntax**: `range(start,end,step)`
+<br/> 
+Use directly with loops for iteration.
+
+```python
+a = list(range(0,11,2)) # returns 0,2,4,..10
+```
+### enumerate()
+with help of this we can keep track of index and value.
+```python
+a = [20,100,5,3,6]
+for index,value in enumerate(a):
+    print(f"{index}\t{value}")
+```
+### zip()
+```python
+zip multiple lists.
+a = [1,2,3]
+b = [4,5,6]
+for item in zip(a,b):
+    print(item)
+```
+### in operator:
+```python
+a = [1,2,3]
+print(3 in a) # True
+```
+### min and max:
+```python
+a = [1,2,3]
+print(min(a)) # 1
+print(max(a)) # 3
+```
+----------
+
+## List Comprehensions
+Quicker and unique way to create lists.
+```python
+# Grab every letter in string
+lst = [x for x in 'word']
+
+# Square numbers in range and turn into list
+lst = [x**2 for x in range(0,11)]
+
+# Check for even numbers in a range
+lst = [x for x in range(11) if x % 2 == 0]
+```
+
+
+### 
+```python
+
 ```
