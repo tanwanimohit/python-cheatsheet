@@ -20,6 +20,19 @@ Because managing python dependencies is a mess, this will install dependencies f
 - `python -m venv venv` this will create a venv folder in your directory.
 - `source ./venv/bin/activate` this will activate this virtual env.
 ----------
+## Comments in python
+- single line use `#`
+```python
+# single line comments
+```
+- multiline use `'''`. often called as docstring, as it is just to document function/classes. 
+```python
+'''
+This is a example of 
+Multiline comment.
+'''
+```
+----------
 
 
 ## Data Types:
@@ -38,6 +51,7 @@ Because managing python dependencies is a mess, this will install dependencies f
 - Use underscore for variables.
 - variables cannot Start with a number.
 - Avoid special meaning keywords.
+- Use snake case for functions.
 ----------
 
 ## Printing in Python:
@@ -408,9 +422,47 @@ lst = [x**2 for x in range(0,11)]
 # Check for even numbers in a range
 lst = [x for x in range(11) if x % 2 == 0]
 ```
+----------
 
-
-### 
+## help function in python
+if you are lazy like me, want to learn documentation about specific inbuilt method via terminal, you can use help()
 ```python
+a = [1,2,3]
+help(a.insert) # will print info about this method
+```
 
+----------
+## Functions in python
+### Basic function with argument and default value
+```python
+# def keyword to define functions.
+def say_hello(name="world"):
+    print(f"Hello {name}!")
+    # or return f"Hello {name}!" if you want to return it.
+```
+### *args and **kwargs
+- `*args`: N number of arguments, returns tuple.
+- `**kwargs`: N number of keyword arguments, returns dict.
+```python
+def total_income(*args, **kwargs):
+    print(f"Income for month, {kwargs['month']} is : {sum(args)}")
+total_income(10,20,300,month="July")
+```
+### lamda, filter and map
+```python
+#map
+def square(num):
+    return num**2
+my_nums = [1,2,3,4,5]
+map(square,my_nums) # 1, 4, 9, 16, 25
+
+# filter
+def check_even(num):
+    return num % 2 == 0
+nums = [0,1,2,3,4,5,6,7,8,9,10]
+filter(check_even, nums) # 0, 2, 4, 6, 8, 10
+
+# lets convert each of the above function to lambda.
+map(lambda num:num**2,my_nums)
+filter(lambda num:num%2==0, nums) 
 ```
