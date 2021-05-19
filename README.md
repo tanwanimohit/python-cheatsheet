@@ -3,7 +3,7 @@ Cheatsheets are good when you want to revise some of the concepts, but a idle wa
 I would recommend you to learn in depth from this course: [Udemy Course](https://www.udemy.com/course/complete-python-bootcamp/)
 <br/>If you can self learn Repository: [Github](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
 
-----------
+ 
 
 ## VSCODE extension:
 - Python
@@ -12,14 +12,14 @@ I would recommend you to learn in depth from this course: [Udemy Course](https:/
 - Arepl
 
 ## Making a virtual env:
-----------
+ 
 
 ### **Why Virtual env?**
 Because managing python dependencies is a mess, this will install dependencies for that project only instead of globally.
 
 - `python -m venv venv` this will create a venv folder in your directory.
 - `source ./venv/bin/activate` this will activate this virtual env.
-----------
+ 
 ## Comments in python
 - single line use `#`
 ```python
@@ -32,7 +32,7 @@ This is a example of
 Multiline comment.
 '''
 ```
-----------
+ 
 
 
 ## Data Types:
@@ -45,20 +45,20 @@ Multiline comment.
 - set # Unordered collection of unique objs.
 - bool # Logical value True / False.
 - None # no value
-----------
+ 
 
 ## Naming conventions:
 - Use underscore for variables.
 - variables cannot Start with a number.
 - Avoid special meaning keywords.
 - Use snake case for functions.
-----------
+ 
 
 ## Printing in Python:
 ```python
 print("")
 ```
-----------
+ 
 
 ## Numbers in Python:
 ```python
@@ -84,7 +84,7 @@ tax_rate = 0.1
 my_taxes = my_income*tax_rate
 print("My income tax is",my_taxes)
 ```
-----------
+ 
 
 ## Strings in Python:
 String is nothing but ordered seq. of characters.
@@ -111,13 +111,13 @@ print(greeting,name)
 print("Hello\nWorld")
 # or
 print("""
--------------
+ ---
 Hello
 world\
 Yeahh!!
 "Quotes"
 'Single quote'
--------------
+ ---
 """)
 ```
 ### Check the length of string:
@@ -137,7 +137,7 @@ a[::2] # Step will be 2.
 # We can use this to print a string backwards
 s[::-1]
 ```
-----------
+ 
 
 ### String methods:
 ```python
@@ -175,7 +175,7 @@ right_alignment = "Right Text"
 print(f"{left_alignment : <20}|{center_alignment : ^15}|{right_alignment : >20}")
 More about this: https://pyformat.info/
 ```
-----------
+ 
 
 ## Lists in Python:
 ### Basic Usage
@@ -217,7 +217,7 @@ a.reverse() # also in-place
 a = [1, 2, 3, [4,5,]]
 print(a[3][1]) # Returns 5.
 ```
-----------
+ 
 
 ## Dictionaries in Python
 Unordered key-value mappings, basically you can have custom keys
@@ -239,7 +239,7 @@ print(prices)
 print(prices.get("banana")) # it will check if it is present, return None if not.
 print(prices.__contains__("apple")) # Returns true/false
 ```
-----------
+ 
 
 ## Tuples in Python
 Same as list, but immutable.
@@ -251,7 +251,7 @@ print(a)
 a.count(2) # This can be use with list as well.
 a.index(3) # This can be use with list as well.
 ```
-----------
+ 
 
 ## Sets in Python
 Sets are an unordered collection of unique elements. 
@@ -267,7 +267,7 @@ print(a) # {1}
 a = [1,1,2,2,2,3,3,3]
 a = set(a)
 ```
-----------
+ 
 
 ## File IO with Python
 ### init file obj
@@ -303,7 +303,7 @@ with open("file.txt") as file:
 - `w+`: Write + Read (will override the file)
 - `a`: Append the file
 
-----------
+ 
 
 ## Chaining comparison operators:
 To chain `==, != <, >, >=, <= and is` these operators, we have these logical operators
@@ -319,7 +319,7 @@ if not 10 == 10:
     print("Tough luck!" )
 ```
 
-----------
+ 
 
 ## Python Statements:
 Indentation is **important** in the python.
@@ -408,7 +408,7 @@ a = [1,2,3]
 print(min(a)) # 1
 print(max(a)) # 3
 ```
-----------
+ 
 
 ## List Comprehensions
 Quicker and unique way to create lists.
@@ -422,7 +422,7 @@ lst = [x**2 for x in range(0,11)]
 # Check for even numbers in a range
 lst = [x for x in range(11) if x % 2 == 0]
 ```
-----------
+ 
 
 ## help function in python
 if you are lazy like me, want to learn documentation about specific inbuilt method via terminal, you can use help()
@@ -431,7 +431,6 @@ a = [1,2,3]
 help(a.insert) # will print info about this method
 ```
 
-----------
 ## Functions in python
 ### Basic function with argument and default value
 ```python
