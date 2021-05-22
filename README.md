@@ -3,7 +3,10 @@ Cheatsheets are good when you want to revise some of the concepts, but a idle wa
 I would recommend you to learn in depth from this course: [Udemy Course](https://www.udemy.com/course/complete-python-bootcamp/)
 <br/>If you can self learn Repository: [Github](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
 
- 
+## Theory
+- Python is a scripting language.
+- **Scripting vs Compiled ?** - Language like c++/java's code needs to compiled by its compiler, after compilation it is just machine level code.
+Where as in a scripting language its interpreter will be run the code one the spot one line at a time.
 
 ## VSCODE extension:
 - Python
@@ -11,8 +14,7 @@ I would recommend you to learn in depth from this course: [Udemy Course](https:/
 - Magic Python
 - Arepl
 
-## Making a virtual env:
- 
+## Making a virtual env: 
 
 ### **Why Virtual env?**
 Because managing python dependencies is a mess, this will install dependencies for that project only instead of globally.
@@ -32,8 +34,6 @@ This is a example of
 Multiline comment.
 '''
 ```
- 
-
 
 ## Data Types:
 - int # Whole Numbers
@@ -45,20 +45,18 @@ Multiline comment.
 - set # Unordered collection of unique objs.
 - bool # Logical value True / False.
 - None # no value
- 
 
 ## Naming conventions:
 - Use underscore for variables.
 - variables cannot Start with a number.
 - Avoid special meaning keywords.
 - Use snake case for functions.
- 
+- Use CamelCase for Classes names.
 
 ## Printing in Python:
 ```python
 print("")
 ```
- 
 
 ## Numbers in Python:
 ```python
@@ -84,7 +82,6 @@ tax_rate = 0.1
 my_taxes = my_income*tax_rate
 print("My income tax is",my_taxes)
 ```
- 
 
 ## Strings in Python:
 String is nothing but ordered seq. of characters.
@@ -137,7 +134,6 @@ a[::2] # Step will be 2.
 # We can use this to print a string backwards
 s[::-1]
 ```
- 
 
 ### String methods:
 ```python
@@ -175,7 +171,6 @@ right_alignment = "Right Text"
 print(f"{left_alignment : <20}|{center_alignment : ^15}|{right_alignment : >20}")
 More about this: https://pyformat.info/
 ```
- 
 
 ## Lists in Python:
 ### Basic Usage
@@ -217,7 +212,6 @@ a.reverse() # also in-place
 a = [1, 2, 3, [4,5,]]
 print(a[3][1]) # Returns 5.
 ```
- 
 
 ## Dictionaries in Python
 Unordered key-value mappings, basically you can have custom keys
@@ -239,7 +233,6 @@ print(prices)
 print(prices.get("banana")) # it will check if it is present, return None if not.
 print(prices.__contains__("apple")) # Returns true/false
 ```
- 
 
 ## Tuples in Python
 Same as list, but immutable.
@@ -251,7 +244,6 @@ print(a)
 a.count(2) # This can be use with list as well.
 a.index(3) # This can be use with list as well.
 ```
- 
 
 ## Sets in Python
 Sets are an unordered collection of unique elements. 
@@ -266,8 +258,7 @@ print(a) # {1}
 ```python
 a = [1,1,2,2,2,3,3,3]
 a = set(a)
-```
- 
+``` 
 
 ## File IO with Python
 ### init file obj
@@ -303,8 +294,6 @@ with open("file.txt") as file:
 - `w+`: Write + Read (will override the file)
 - `a`: Append the file
 
- 
-
 ## Chaining comparison operators:
 To chain `==, != <, >, >=, <= and is` these operators, we have these logical operators
 - and
@@ -317,9 +306,7 @@ if "hello" is "world" or "india" is "country":
     print("Yeah!!")
 if not 10 == 10:
     print("Tough luck!" )
-```
-
- 
+``` 
 
 ## Python Statements:
 Indentation is **important** in the python.
@@ -422,7 +409,6 @@ lst = [x**2 for x in range(0,11)]
 # Check for even numbers in a range
 lst = [x for x in range(11) if x % 2 == 0]
 ```
- 
 
 ## help function in python
 if you are lazy like me, want to learn documentation about specific inbuilt method via terminal, you can use help()
@@ -464,4 +450,128 @@ filter(check_even, nums) # 0, 2, 4, 6, 8, 10
 # lets convert each of the above function to lambda.
 map(lambda num:num**2,my_nums)
 filter(lambda num:num%2==0, nums) 
+```
+## Classes in python
+### Basic implementation
+```python
+class Circle:
+    pi = 3.14
+
+    # Circle gets instantiated with a radius (default is 1)
+    def __init__(self, radius=1):
+        self.radius = radius 
+        self.area = radius * radius * Circle.pi
+
+    # Method for resetting Radius
+    def setRadius(self, new_radius):
+        self.radius = new_radius
+        self.area = new_radius * new_radius * self.pi
+
+    # Method for getting Circumference
+    def getCircumference(self):
+        return self.radius * self.pi * 2
+
+
+c = Circle()
+
+print('Radius is: ',c.radius)
+print('Area is: ',c.area)
+print('Circumference is: ',c.getCircumference())
+
+```
+### Inheritance
+```python
+class Animal:
+    def __init__(self):
+        print("Animal created")
+
+    def whoAmI(self):
+        print("Animal")
+
+    def eat(self):
+        print("Eating")
+
+
+class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog created")
+
+    def whoAmI(self):
+        print("Dog")
+
+    def bark(self):
+        print("Woof!")
+```
+### Polymorphism
+```python
+class Animal:
+    def __init__(self, name):    # Constructor of the class
+        self.name = name
+
+    def speak(self):              # Abstract method, defined by convention only
+        raise NotImplementedError("Subclass must implement abstract method")
+
+
+class Dog(Animal):
+    
+    def speak(self):
+        return self.name+' says Woof!'
+    
+class Cat(Animal):
+
+    def speak(self):
+        return self.name+' says Meow!'
+    
+fido = Dog('Fido')
+isis = Cat('Isis')
+
+print(fido.speak())
+print(isis.speak())
+```
+### Using Special methods
+Just like `__init__` we have more special methods.
+```python
+class Book:
+    def __init__(self, title, author, pages):
+        print("A book is created")
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def __str__(self):
+        return "Title: %s, author: %s, pages: %s" %(self.title, self.author, self.pages)
+
+    def __len__(self):
+        return self.pages
+
+    def __del__(self):
+        print("A book is destroyed")
+
+
+book = Book("Python Rocks!", "Jose Portilla", 159)
+
+#Special Methods
+print(book)
+print(len(book))
+del book
+```
+
+## Exception Handling
+### try, except, finally, and else.
+```python
+def askint():
+    while True:
+        try:
+            val = int(input("Please enter an integer: "))
+        except:
+            # You can also expect specific error like TypeError or generic type Exception
+            print("Looks like you did not enter an integer!")
+            continue
+        else:
+            print("Yep that's an integer!")
+            break
+        finally:
+            print("Finally, I executed!")
+        print(val)
 ```
