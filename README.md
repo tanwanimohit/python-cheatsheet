@@ -575,3 +575,105 @@ def askint():
             print("Finally, I executed!")
         print(val)
 ```
+
+## Decorators
+```python
+def new_decorator(func):
+
+    def wrap_func():
+        print("Code would be here, before executing the func")
+
+        func()
+
+        print("Code here will execute after the func()")
+
+    return wrap_func
+
+@new_decorator
+def func_needs_decorator():
+    print("This function is in need of a Decorator")
+
+func_needs_decorator()
+# Code would be here, before executing the func
+# This function is in need of a Decorator
+# Code here will execute after the func()
+```
+
+## Generators
+```python
+# Without generator
+def get_me_cubes(n):
+    output_list = []
+    for i in range(n):
+        output_list.append(i**3)
+    return output_list
+
+print(get_me_cubes(10))
+# With generator
+def generate_cubes(n):
+    for i in range(n):
+        yield i**3
+
+print(generate_cubes(10))
+```
+
+## Useful Python modules you should look.
+- collections
+- os
+- shutil
+- datetime
+- math
+- random
+- pdb
+- re
+- timeit
+- zipfile
+
+## Working with CSVs in python
+```python
+# don't forget to install csv
+import csv
+data = open('example.csv',encoding="utf-8")
+# passing encoding is important otherwise you will get the Unicode error.
+csv_data = csv.reader(data)
+# reading
+data_lines = list(csv_data)
+# writing 
+file_to_output = open('to_save_file.csv','w',newline='')
+# use 'a' for append
+csv_writer = csv.writer(file_to_output,delimiter=',')
+csv_writer.writerow(['a','b','c'])
+file_to_output.close()
+```
+
+## Working with pdfs in python
+```python
+# don't forget to use PyPDF2
+import PyPDF2
+f = open('Working_Business_Proposal.pdf','rb')
+# we need to pass rb for binary files.
+pdf_text = []
+
+pdf_reader = PyPDF2.PdfFileReader(f)
+
+for p in range(pdf_reader.numPages):
+    page = pdf_reader.getPage(p)
+    pdf_text.append(page.extractText())
+```
+
+## Sending Emails with python
+```python
+import smtplib
+smtp_object = smtplib.SMTP('smtp.gmail.com',587)
+email = "youremail@email.com"
+password = "yourpassword"
+# Tip: search about how you generate app passwords.
+smtp_object.login(email,password)
+from_address = "fromemail@email.com"
+to_address = "toemail@email.com"
+subject = "Subject"
+message = "Message"
+msg = "Subject: " + subject + '\n' + message
+smtp_object.sendmail(from_address,to_address,msg)
+smtp_object.quit()
+```
