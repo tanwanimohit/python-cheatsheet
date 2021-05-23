@@ -9,7 +9,7 @@ I would recommend you to learn in depth from this course: [Udemy Course](https:/
   - [Theory](#theory)
   - [VSCODE extension:](#vscode-extension)
   - [Making a virtual env:](#making-a-virtual-env)
-    - [**Why Virtual env?**](#why-virtual-env)
+    - [Why Virtual env?](#why-virtual-env)
   - [Comments in python](#comments-in-python)
   - [Data Types:](#data-types)
   - [Naming conventions:](#naming-conventions)
