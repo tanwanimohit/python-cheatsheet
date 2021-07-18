@@ -1,7 +1,7 @@
 # Python Cheatsheet
-Cheatsheets are good when you want to revise some of the concepts, but an idle way to start learning <br/>
+Cheatsheets are good when you want to revise some of the concepts, but not an idle way to start learning <br/>
 I would recommend you to learn in depth from this course: [Udemy Course](https://www.udemy.com/course/complete-python-bootcamp/)
-<br/>If you can self learn Repository: [Github](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
+<br/>If you can self learn then you can refer, this Repository: [Github](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
 
 ## Index
 - [Python Cheatsheet](#python-cheatsheet)
